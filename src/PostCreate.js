@@ -8,15 +8,20 @@ export default () => {
     const onSubmit = async (event) => {
         event.preventDefault();
 
-        await Axios.post("http://localhost:4000/posts", {
-            title
-        });
+        if (title.length > 0)   {
+            await Axios.post("http://localhost:4000/posts", {
+                title
+            });
+        }else{
+            console.log("insert valid title");
+            
+        }
 
         setTitle('');
     }
 
     return <div >
-        <form onSubmit={onSubmit}> 
+        <form onSubmit={onSubmit}>
             <div class="form-group">
                 <label>
                     Title
