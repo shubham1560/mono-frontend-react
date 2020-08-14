@@ -1,5 +1,6 @@
 import React from 'react';
 import PostCreate from './PostCreate'
+import PostList from './PostList'
 
 export default () => {
     return (
@@ -8,6 +9,7 @@ export default () => {
                 <div className="col-md-3">
                     <h1>Post Creation</h1>
                     <PostCreate />
+                    <PostList />
                 </div>
             </div>
         </div>
