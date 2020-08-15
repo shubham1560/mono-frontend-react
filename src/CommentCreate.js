@@ -1,28 +1,35 @@
 import React, { useState } from 'react';
+import Axios from 'axios';
 
 
 
 export default (props) => {
-    console.log(props);
+    // console.log(props.post);
 
-    const [comment, setComment] = useState('');
+    const [content, setComment] = useState('');
 
-    const onSubmit = () => {
-        console.log("yolo");
+    const onSubmit = async (event) => {
+        event.preventDefault();
+
+        await Axios.post(`http://localhost:4001/posts/${props.post}/comments`, {
+            content
+        })
+
+        setComment('')
     }
 
 
     return <div>
-        {comment}
+        {/* {comment} */}
         <form onSubmit={onSubmit}>
             <div class="form-group">
                 <label>
                     comment
                 </label>
-                <input value={comment} onChange={e => setComment(e.target.value)} className="form-control" />
+                <input value={content} onChange={e => setComment(e.target.value)} className="form-control" />
             </div>
 
-            <button className="btn btn-primary">Submit</button>
+            <button className="btn btn-primary" type="submit">Submit</button>
         </form>
 
     </div>

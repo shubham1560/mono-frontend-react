@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
-import CommentCreate from './CommentCreate'
+import CommentCreate from './CommentCreate';
+import CommentList from './ListComment'
 
 export default () => {
 
@@ -23,6 +24,7 @@ export default () => {
             <div className="card-body">
                 {post.title}
             </div>
+            <CommentList post={post.id}></CommentList>
             <CommentCreate post={post.id}></CommentCreate>
         </div>
     })
