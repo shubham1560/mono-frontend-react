@@ -27,8 +27,8 @@ export default (props) => {
     useEffect(()=>{
         commentList()
     }, [])
-    return <div>
+
+    return <ul>
         {renderedComments}
-        comment list works
-    </div>
+    </ul>
 }

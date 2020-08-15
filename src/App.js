@@ -9,8 +9,10 @@ export default () => {
                 <div className="col-md-3">
                     <h1>Post Creation</h1>
                     <PostCreate />
-                    <PostList />
                 </div>
+            </div>
+            <div className="row">
+                <PostList />
             </div>
         </div>
     )

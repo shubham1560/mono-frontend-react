@@ -24,7 +24,7 @@ export default (props) => {
         <form onSubmit={onSubmit}>
             <div class="form-group">
                 <label>
-                    comment
+                    <b>Post a comment on this thread:</b>
                 </label>
                 <input value={content} onChange={e => setComment(e.target.value)} className="form-control" />
             </div>

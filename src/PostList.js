@@ -8,19 +8,17 @@ export default () => {
     const [posts, setPosts] = useState({});
 
     const fetchPosts = async () => {
-
         const res = await Axios.get("http://localhost:4000/posts");
         setPosts(res.data)
-
     }
-
+    
     useEffect(() => {
         fetchPosts();
     }, [])
     // fetchPosts();
 
     const renderedPosts = Object.values(posts).map(post => {
-        return <div className="card" key={post.id}>
+        return <div className="card col-md-4" key={post.id}>
             <div className="card-body">
                 {post.title}
             </div>
@@ -29,7 +27,6 @@ export default () => {
         </div>
     })
 
-    return <div className="d-flex flex-row flex-wrap justify-content-between">
-        {renderedPosts}
-    </div>
+    return renderedPosts
+    
 }
